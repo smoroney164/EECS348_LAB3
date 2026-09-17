@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>CSS Font Control</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: lightpink;
+            ;
+        }
+
+        #paragraph {
+            border-style: solid;
+            border-width: 5px;
+            border-radius: 20px;
+            background-color: white;
+            border-color: white;
+            padding: 10px;
+        }
+
+        input {
+            margin: 5px;
+            width: 70px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>CSS Font Control</h1>
+
+    <p id="paragraph">
+        Silly silly paragraph for a silly silly user like you! #CustomizeMe!
+    </p>
+
+    <h2>Text Color</h2>
+
+<label for="textRed">Red:</label>
+<input
+    type="range"
+    id="textRed"
+    min="0"
+    max="255"
+    value="0"
+    oninput="document.getElementById('textRedValue').textContent = this.value; changeStyles();">
+<span id="textRedValue">0</span>
+
+<br>
+
+<label for="textGreen">Green:</label>
+<input
+    type="range"
+    id="textGreen"
+    min="0"
+    max="255"
+    value="0"
+    oninput="document.getElementById('textGreenValue').textContent = this.value; changeStyles();">
+<span id="textGreenValue">0</span>
+
+<br>
+
+<label for="textBlue">Blue:</label>
+<input
+    type="range"
+    id="textBlue"
+    min="0"
+    max="255"
+    value="0"
+    oninput="document.getElementById('textBlueValue').textContent = this.value; changeStyles();">
+<span id="textBlueValue">0</span>
+
+    <h2>Border Color</h2>
+
+<label for="borderRed">Red:</label>
+<input
+    type="range"
+    id="borderRed"
+    min="0"
+    max="255"
+    value="0"
+    oninput="document.getElementById('borderRedValue').textContent = this.value; changeStyles();">
+<span id="borderRedValue">0</span>
+
+<br>
+
+<label for="borderGreen">Green:</label>
+<input
+    type="range"
+    id="borderGreen"
+    min="0"
+    max="255"
+    value="0"
+    oninput="document.getElementById('borderGreenValue').textContent = this.value; changeStyles();">
+<span id="borderGreenValue">0</span>
+
+<br>
+
+<label for="borderBlue">Blue:</label>
+<input
+    type="range"
+    id="borderBlue"
+    min="0"
+    max="255"
+    value="0"
+    oninput="document.getElementById('borderBlueValue').textContent = this.value; changeStyles();">
+<span id="borderBlueValue">0</span>
+
+    <h2>Border Width</h2>
+
+<label for="borderWidth">Width:</label>
+
+<input
+    type="range"
+    id="borderWidth"
+    min="1"
+    max="20"
+    value="2"
+    oninput="document.getElementById('borderWidthValue').textContent = this.value; changeStyles();">
+
+<span id="borderWidthValue">2</span> pixels
+
+    <br>
+
+    <script>
+        function changeStyles() {
+            const paragraph = document.getElementById("paragraph");
+
+            const textRed = document.getElementById("textRed").value;
+            const textGreen = document.getElementById("textGreen").value;
+            const textBlue = document.getElementById("textBlue").value;
+
+            const borderRed = document.getElementById("borderRed").value;
+            const borderGreen = document.getElementById("borderGreen").value;
+            const borderBlue = document.getElementById("borderBlue").value;
+
+            const borderWidth =
+                document.getElementById("borderWidth").value;
+
+            paragraph.style.color =
+                "rgb(" + textRed + ", " + textGreen + ", " + textBlue + ")";
+
+            paragraph.style.borderColor =
+                "rgb(" + borderRed + ", " + borderGreen + ", " +
+                borderBlue + ")";
+
+            paragraph.style.borderWidth = borderWidth + "px";
+        }
+    </script>
+</body>
+
+</html>

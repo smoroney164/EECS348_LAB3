@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>Password Verification</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: lightpink;
+        }
+
+        .password-box {
+            max-width: 400px;
+            padding: 25px;
+            background-color: white;
+            border: 2px solid deeppink;
+            border-radius: 15px;
+        }
+
+        input {
+            margin: 8px 0;
+            padding: 8px;
+            width: 250px;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: deeppink;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="password-box">
+        <h1>Password Verification</h1>
+
+        <p>
+            Enter the same password twice. The password must contain
+            at least eight characters.
+        </p>
+
+        <label for="passwordOne">Enter password:</label>
+
+        <br>
+
+        <input type="password" id="passwordOne">
+
+        <br>
+
+        <label for="passwordTwo">Enter password again:</label>
+
+        <br>
+
+        <input type="password" id="passwordTwo">
+
+        <br>
+
+        <button type="button" onclick="verifyPasswords()">
+            Verify Passwords
+        </button>
+    </div>
+
+    <script>
+        function verifyPasswords() {
+            const passwordOne =
+                document.getElementById("passwordOne").value;
+
+            const passwordTwo =
+                document.getElementById("passwordTwo").value;
+
+            if (passwordOne.length < 8) {
+                alert("The password must be at least eight characters long.");
+            }
+            else if (passwordOne !== passwordTwo) {
+                alert("The passwords do not match.");
+            }
+            else {
+                alert("The passwords match!");
+            }
+        }
+    </script>
+</body>
+
+</html>
